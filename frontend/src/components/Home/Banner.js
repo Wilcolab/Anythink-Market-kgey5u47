@@ -1,8 +1,12 @@
 import React from "react";
+import { ThemeProvider } from "styled-components";
 import logo from "../../imgs/logo.png";
+import theme from "../../styles/theme";
 
 const Banner = () => {
+
   return (
+    <ThemeProvider theme={theme.dark}>
     <div className="banner text-white">
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
@@ -13,6 +17,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
+    </ThemeProvider>
   );
 };
 
