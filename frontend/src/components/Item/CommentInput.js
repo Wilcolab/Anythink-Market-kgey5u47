@@ -12,8 +12,7 @@ const CommentInput = (props) => {
     const [body, setBody] = useState("")
     const handleChange = (ev) => setBody(ev.target.value)
 
-    const createComment = async (ev) => {
-      ev.preventDefault();
+    const createComment = async () => {
       agent.Comments.create(props.slug, {
         body: body,
       }).then((payload) => {
@@ -23,7 +22,7 @@ const CommentInput = (props) => {
     };
  
     return (
-      <form className="card comment-form m-2" onSubmit={createComment(ev)}>
+      <form className="card comment-form m-2" onSubmit={createComment}>
         <div className="card-block">
           <textarea
             className="form-control"
